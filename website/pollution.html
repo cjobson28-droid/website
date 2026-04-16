@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pollution Levels</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="pollution.html">Pollution</a>
+  <a href="effects.html">Health Effects</a>
+  <a href="solutions.html">Solutions</a>
+</nav>
+
+<div class="container">
+  <h1>📊 Current Air Pollution</h1>
+
+  <div class="card">
+    <h2>AQI Level</h2>
+    <h1 id="aqi">--</h1>
+    <p id="status">Loading...</p>
+    <button onclick="loadAQI()">Refresh</button>
+  </div>
+
+  <div class="card">
+    <h2>Why it's bad</h2>
+    <p>
+      Fine particles (PM2.5) can enter your lungs and bloodstream,
+      causing serious health issues.
+    </p>
+  </div>
+</div>
+
+<script>
+async function loadAQI() {
+  const res = await fetch("https://api.waqi.info/feed/almaty/?token=demo");
+  const data = await res.json();
+
+  const aqi = data.data.aqi;
+  document.getElementById("aqi").innerText = aqi;
+
+  let status = "";
+  if (aqi <= 50) status = "Good";
+  else if (aqi <= 100) status = "Moderate";
+  else status = "Unhealthy";
+
+  document.getElementById("status").innerText = status;
+}
+
+loadAQI();
+</script>
+
+</body>
+</html>

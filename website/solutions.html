@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Solutions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="pollution.html">Pollution</a>
+  <a href="effects.html">Health Effects</a>
+  <a href="solutions.html">Solutions</a>
+</nav>
+
+<div class="container">
+  <h1>🌱 How to Help</h1>
+
+  <div class="card">
+    <h2 onclick="toggle('transport')">🚍 Reduce Transport Pollution</h2>
+    <p id="transport" style="display:none;">
+      Use public transport, bike, or walk to reduce emissions.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2 onclick="toggle('energy')">⚡ Save Energy</h2>
+    <p id="energy" style="display:none;">
+      Turn off unused electricity and reduce heating usage.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2 onclick="toggle('policy')">🏛️ Support Clean Policies</h2>
+    <p id="policy" style="display:none;">
+      Advocate for cleaner energy and stricter environmental laws.
+    </p>
+  </div>
+
+</div>
+
+<script>
+function toggle(id) {
+  const el = document.getElementById(id);
+  el.style.display = el.style.display === "none" ? "block" : "none";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Health Effects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="pollution.html">Pollution</a>
+  <a href="effects.html">Health Effects</a>
+  <a href="solutions.html">Solutions</a>
+</nav>
+
+<div class="container">
+  <h1>⚠️ Health Effects</h1>
+
+  <div class="card">
+    <h2 onclick="toggle('short')">Short-Term Effects (Click)</h2>
+    <p id="short" style="display:none;">
+      Irritation of eyes, coughing, headaches, dizziness,
+      and difficulty breathing.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2 onclick="toggle('long')">Long-Term Effects (Click)</h2>
+    <p id="long" style="display:none;">
+      Lung disease, heart disease, reduced life expectancy,
+      and increased risk of cancer.
+    </p>
+  </div>
+
+</div>
+
+<script>
+function toggle(id) {
+  const el = document.getElementById(id);
+  el.style.display = el.style.display === "none" ? "block" : "none";
+}
+</script>
+
+</body>
+</html>
